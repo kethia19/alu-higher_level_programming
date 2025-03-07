@@ -35,7 +35,7 @@ class Square:
 
         Args:
             value: the value to be set.
-        
+
         Raises:
             TypeError: if size is not an integer.
             ValueError: If size < 0.
