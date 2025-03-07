@@ -10,22 +10,12 @@ This module contains a class that defines a square.
 class Square:
     """This class defines the blueprint of a square."""
 
-    def __init__(self, size):
-        """Initialize square with size.
-
-        Args:
-            size: A integer representing object size.
-
-        Raises:
-            TypeError: if size is not an integer.
-        """
-
     def __init__(self, size=0):
         """
-        Initiatilizes Square with size.
+        Initializes Square with size.
 
         Args:
-            size: A integer representing object size.
+            size: An integer representing object size.
                   Has a default value of 0.
         """
         self.__size = size
@@ -63,6 +53,7 @@ class Square:
             int: The area of the square.
         """
         return self.__size**2
+
     def my_print(self):
         """Display the square object with # character."""
         for i in range(self.size):
