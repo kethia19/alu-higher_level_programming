@@ -1,12 +1,11 @@
 #!/usr/bin/python3
+"""Module that provides the MyList class."""
+
 class MyList(list):
-    """ Class that inherits the attributes references of class list
-    Args:
-        list: class list
-    """
+    """A subclass of list with an additional method to print a sorted version."""
 
     def print_sorted(self):
-        """ Method that prints the sorted list """
-        l_sorted = self.copy()
-        l_sorted.sort()
-        print(l_sorted)
+        """Print the list in ascending sorted order."""
+        sorted_list = self.copy()
+        sorted_list.sort()
+        print(sorted_list)

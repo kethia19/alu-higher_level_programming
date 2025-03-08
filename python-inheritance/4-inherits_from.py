@@ -1,13 +1,14 @@
 #!/usr/bin/python3
+"""Module that provides the inherits_from function."""
+
 def inherits_from(obj, a_class):
-    """ Function that returns True/False if obj is an instance of a_class
+    """Check if an object is an instance of a subclass of a_class.
+
     Args:
-        obj: object
-        a_class: class type
+        obj: The object to check.
+        a_class: The class to compare against.
+
     Returns:
-        True if obj is an instance of a_class
-        False, otherwise
+        bool: True if obj is an instance of a subclass of a_class, False otherwise.
     """
-    if type(obj) is a_class:
-        return False
-    return isinstance(obj, a_class)
+    return isinstance(obj, a_class) and type(obj) is not a_class
