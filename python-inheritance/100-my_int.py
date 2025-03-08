@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-"""Module that defines the MyInt class, a subclass of int with inverted equality behavior."""
+""" class MyInt that inherits from int.
+"""
+
 
 class MyInt(int):
-    """Define a custom integer class with inverted equality and inequality operators."""
-
+    """ Class """
     def __eq__(self, other):
-        """Return the result of != check instead of ==."""
-        return int.__ne__(self, other)
+        return int(str(self)) != other
 
     def __ne__(self, other):
-        """Return the result of == check instead of !=."""
-        return int.__eq__(self, other)
+        return int(str(self)) == other

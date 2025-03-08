@@ -1,17 +1,14 @@
 #!/usr/bin/python3
-"""Module that defines a function to add a new attribute to an object."""
+"""dds a new attribute to an object,
+if it’s possible.
+"""
 
-def add_attribute(obj, name, value):
-    """Add a new attribute to an object.
 
-    Args:
-        obj: The object to which the attribute will be added.
-        name: The name of the attribute to add.
-        value: The value of the attribute to add.
-
-    Raises:
-        TypeError: If the attribute cannot be added.
-    """
-    if not hasattr(obj, "__dict__"):
+def add_attribute(obj, attribute, value):
+    """dds a new attribute"""
+    if '__dict__' not in dir(obj):
         raise TypeError("can't add new attribute")
-    setattr(obj, name, value)
+    if '__slots__' in dir(obj):
+        raise TypeError("can't add new attribute")
+    else:
+        setattr(obj, attribute, value)
