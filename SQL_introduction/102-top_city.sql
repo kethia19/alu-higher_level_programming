@@ -1,5 +1,5 @@
 -- Displays the top 3 cities based on temperatures
-SELECT city, ROUND(AVG(value), 4) AS max_temp
+SELECT city, ROUND(AVG(value), 4) AS avg_temp
 FROM temperatures
 WHERE month IN (7, 8)
 GROUP BY city
