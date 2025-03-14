@@ -1,33 +1,22 @@
 #!/usr/bin/python3
-""" Module that defines the class Student
-"""
+"""Pascal's Triangle module"""
 
 
-class Student:
-    """ Class to create student instances """
+def pascal_triangle(n):
+    """Function that returns a list of
+    lists of integers representing the
+    Pascal’s triangle of n
+    """
 
-    def __init__(self, first_name, last_name, age):
-        """ Special method to initialize """
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
+    if n <= 0:
+        return []
 
-    def to_json(self, attrs=None):
-        """ Method that returns directory description """
-        obj = self.__dict__.copy()
-        if type(attrs) is list:
+    triangle = [[1]]
 
-            for item in attrs:
-                if type(item) is not str:
-                    return obj
-
-            d_list = {}
-
-            for iatr in range(len(attrs)):
-                for satr in obj:
-                    if attrs[iatr] == satr:
-                        d_list[satr] = obj[satr]
-            return d_list
-
-        return obj
-        
+    for x in range(1, n):
+        row = [1]
+        for y in range(1, x):
+            row.append(triangle[x-1][y-1] + triangle[x-1][y])
+        row.append(1)
+        triangle.append(row)
+    return triangle
