@@ -1,9 +1,18 @@
 #!/usr/bin/python3
-"""fetches https://intranet.hbtn.io/status"""
-from urllib import request
+"""A script that
+- fetches https://alx-intranet.hbtn.io/status.
+- uses urlib package
+"""
 
-if __name__ == "__main__":
-    with request.urlopen('https://intranet.hbtn.io/status') as res:
+
+if __name__ == '__main__':
+    import urllib.request
+
+    url = 'https://intranet.hbtn.io/status'
+    if url.startswith('https://'):
+        url = 'https://alu-intranet.hbtn.io/status'
+
+    with urllib.request.urlopen(url) as res:
         content = res.read()
         print("Body response:")
         print("\t- type: {}".format(type(content)))
